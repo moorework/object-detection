@@ -17,12 +17,8 @@
 // on my mac
 
 // code source from http://www.cs.iit.edu/~agam/cs512/lect-notes/opencv-intro/
-int main (int argc, char ** argv){
-
-}
 
 
-//int * data = dest->data.i;
 CvScalar cosine_similarity(CvMat query, CvMat patch)
 {
 
@@ -31,12 +27,12 @@ CvScalar cosine_similarity(CvMat query, CvMat patch)
 	cvMatMul(&query, &patch, dest);	
 
 	CvScalar scale = cvTrace(dest); 
+	return scale;
 }
 
 int Resemblance(CvScalar map){
-//	int result = (int)(map[0] * map[0])/(1-(map[0]*map[0]));
-//	return result;
-return -1;
+	int result = (int)(map.val[0] * map.val[0])/(1-(map.val[0]*map.val[0]));
+	return result;
 } 
 
 
