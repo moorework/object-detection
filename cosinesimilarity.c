@@ -7,20 +7,24 @@
 //int Resemblance(CvScalar map);
 
 //Do the cosine similarity operation
-// See: Frobenius inner product
+//See: Frobenius inner product
 //Boils down to the normalized product of the matrices
 CvScalar cosine_similarity(CvMat query, CvMat patch)
 {
+	//Create a destination matrix
 	CvMat* dest = cvCreateMat(patch.rows,patch.cols,patch.type);
 
+	//Take the product of the two matrices 
 	cvMatMul(&query, &patch, dest);	
 
+	//Trace the matrices 
 	CvScalar scale = cvTrace(dest); 
 	return scale;
 }
 
-int Resemblance(CvScalar map){
-	int result = (int)(map.val[0] * map.val[0])/(1-(map.val[0]*map.val[0]));
+//int?
+double Resemblance(CvScalar map){
+	double result = (int)(map.val[0] * map.val[0])/(1-(map.val[0]*map.val[0]));
 	return result;
 } 
 

@@ -68,6 +68,5 @@ CvMat** window(IplImage * query, IplImage Test)
 
 	}	
 
-
 	return patches;	
 }
