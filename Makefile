@@ -1,9 +1,10 @@
 all:cosine window
 
 cosine:
-	gcc cosinesimilarity.c -Wall -c  `pkg-config --cflags --libs opencv`
+	gcc cosinesimilarity.c -Wall -c -o ./bin/cosinesimilarity.o  `pkg-config --cflags --libs opencv`
 window:
-	gcc window.c -Wall -c `pkg-config --cflags --libs opencv`
+	gcc window.c -Wall -c -o ./bin/window.o `pkg-config --cflags --libs opencv`
 
 clean: 
-	rm *.o 
+	rm -rf ./bin
+	mkdir ./bin

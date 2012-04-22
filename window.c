@@ -23,7 +23,8 @@ CvMat** window(IplImage * query, IplImage Test)
 	int test_width = Test.width;
 
 	//Get the data out of the test image so we can manipulate it 
-	unsigned char * data = (unsigned char *)Test->imageData;
+	//Unsigned vs signed char?
+	unsigned char * data = (unsigned char *)Test.imageData;
 	int i,j,k,l;
 
 	//FIXME This math may need work 
@@ -61,7 +62,7 @@ CvMat** window(IplImage * query, IplImage Test)
 				}
 			}
 			//FIXME figure out how to get the data from the swap into the array
-			memcpy(patches[patchindex]->data, swap, query_size);
+			memcpy(patches[patchindex]->data.ptr, swap, query_size);
 			patchindex+=1;
 		}
 
