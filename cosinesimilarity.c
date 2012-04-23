@@ -28,5 +28,12 @@ double Resemblance(CvScalar map){
 	return result;
 } 
 
+void significance(resembleList res){
+	int i;
 
-
+	for(i = 0; i < res.size;i++){
+		if(res.resemblences[i] >= TOLERANCE){
+			res.resemblences[i] = 0.0;		
+		}
+	} 
+}
